@@ -1,24 +1,41 @@
-# Employee Onboarding Integration
+## Employee Onboarding Integration
+1. Business Requirement
 
-## 1. Business Requirement
-The business requirement is that Whenever a new employee is created in the HR system, the employee details must be sent to SAP S/4HANA automatically.
-## 2. Source System
+Whenever a new employee is created in the HR system, the employee details must be automatically transferred to the SAP S/4HANA system through SAP Integration Suite.
+
+The objective of this integration is to eliminate manual employee data entry, reduce processing delays, and minimize the possibility of data-entry errors.
+
+2. Source System
+
 HR System
-## 3. Target System
-SAP S/4 HANA System
-## 4. Integration Protocol
+
+The HR system is the source application where new employee information is created and maintained. For this project, the HR system will be simulated using an HTTPS REST endpoint.
+
+3. Target System
+
+SAP S/4HANA System
+
+SAP S/4HANA is the target system where the employee information will be created. Since an actual SAP S/4HANA system is not available, the target system will be simulated using a mock REST API.
+
+4. Integration Protocol
+
 HTTPS/REST
-## 5. Input Format
+
+5. Input Format
+
 JSON
-## 6. Output Format
+
+6. Output Format
+
 XML
-## 7. High-Level Integration Flow
+
+7. High-Level Integration Flow
 HR System
-   ↓
-HTTPS
-   ↓
-SAP CPI
-   ↓
-Transformation
-   ↓
+   │
+   │ HTTPS/REST
+   ▼
+SAP Integration Suite
+   │
+   │ Transform JSON → XML
+   ▼
 SAP S/4HANA
